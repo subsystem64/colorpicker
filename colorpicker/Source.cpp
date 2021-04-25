@@ -1,6 +1,5 @@
-#include <stdio.h>
 #include <Windows.h>
-#include <iostream>
+#include <stdio.h>
 
 
 //function to convert RGB to HEX value
@@ -26,7 +25,7 @@ void print_error()
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, 207);
-    std::cout << "Error Code: " << GetLastError() << "\n";
+    printf("Error Code: %d\n", GetLastError());
     SetConsoleTextAttribute(hConsole, 15);
 }
 
@@ -43,27 +42,27 @@ int main() {
         
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
         SetConsoleTextAttribute(hConsole, 3);
-        std::cout << "******************\n";
-        std::cout << "*  COLOR PICKER  *\n";
-        std::cout << "******************\n";
+        printf("******************\n");
+        printf("*  COLOR PICKER  *\n");
+        printf("******************\n");
 
         //Register hotkey
         if (RegisterHotKey(NULL, 1, MOD_ALT | MOD_NOREPEAT, 0x43))
         {
             console_color_init();
             HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-            std::cout << "Copyright (c) 2021 subsystem64\n";
-            std::cout << "\n[*]Registering hotkey using MOD_NOREPEAT flag ... ";
+            printf("Copyright (c) 2021 subsystem64\n");
+            printf("\n[*]Registering hotkey using MOD_NOREPEAT flag ... ");
             print_ok();
             SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY);
-            std::cout << "[-]Press 'ALT + c' to record color under current cursor position\n";
+            printf("[-]Press 'ALT + c' to record color under current cursor position\n");
             SetConsoleTextAttribute(hConsole, 15);
             
         }
         else
         {   
             console_color_init();
-            std::cout << "[-]An error occured ... ";
+            printf("[-]An error occured ... ");
             print_error();
         }
 
@@ -99,7 +98,7 @@ int main() {
                 //print RGB value
                 printf("\nRGB: %i, %i, %i\n", cr, cg, cb);
                 //print HEX value
-                std::cout << "Hex: #" << std::hex << hexcolor(cr, cg, cb) << "\n";
+                printf("Hex: #%x\n", hexcolor(cr, cg, cb));
             }
 
             

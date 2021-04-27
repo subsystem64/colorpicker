@@ -38,13 +38,13 @@ int main() {
     HDC hDC;
     BOOL b;
 
-    while (true){
+    while (1) {
         
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
         SetConsoleTextAttribute(hConsole, 3);
-        printf("******************\n");
-        printf("*  COLOR PICKER  *\n");
-        printf("******************\n");
+        printf("+-+-+-+-+-+-+-+-+-\n");
+        printf("   COLOR PICKER\n");
+        printf("+-+-+-+-+-+-+-+-+-\n");
 
         //Register hotkey
         if (RegisterHotKey(NULL, 1, MOD_ALT | MOD_NOREPEAT, 0x43))

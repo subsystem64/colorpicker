@@ -107,7 +107,7 @@ int main(){
                 //print RGB value
                 int bufferSize = snprintf(NULL, 0, "\nRGB: %i, %i, %i\n", cr, cg, cb);
                 const char* buffer = malloc(bufferSize + 1);
-                if(buffer == NULL){
+                if(buffer == NULL){     //check if malloc failed
                     console_color_init();
                     printf("[-]Failed to allocate buffer 1 ...");
                     print_error();
@@ -119,7 +119,7 @@ int main(){
                 //print HEX value
                 int buffer2Size = snprintf(NULL, 0, "Hex: #%x\n", hexcolor(cr, cg, cb) + bufferSize);
                 const char* buffer2 = malloc(buffer2Size + bufferSize + 1);
-                if (buffer2 == NULL) {
+                if (buffer2 == NULL) {      //check if malloc failed
                     console_color_init();
                     printf("[-]Failed to allocate buffer 2 ...");
                     print_error();

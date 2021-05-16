@@ -4,7 +4,8 @@ This is a console application for Windows.\
 Compiled binaries can be found in `Releases`.
 
 ## Usage
-Outputs the RGB and hex value of the current pixel under cursor when the hot-key `ALT + c` is pressed.
+Outputs the RGB and hex value of the current pixel under cursor when the hot-key `ALT + c` is pressed. \
+Values are copied to the clipboard.
 
 ### License
 

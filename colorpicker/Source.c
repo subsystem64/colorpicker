@@ -128,11 +128,11 @@ int main(){
                 snprintf(buffer2, buffer2Size + bufferSize + 1, "Hex: #%x\n", hexcolor(cr, cg, cb));//write hex value to buffer
                 printf(buffer2);
 
-                buffer = ++buffer;//shift pointer right to remove \n
+                ++buffer;//shift pointer right to remove \n
                 
                 strcat(buffer2, buffer);//concatenate string
                 
-                buffer = --buffer;//shift pointer back
+                --buffer;//shift pointer back
                 free(buffer);
 
                 //copy output to clipboard

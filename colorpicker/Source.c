@@ -54,7 +54,6 @@ int main(){
         //Register hotkey
         if (RegisterHotKey(NULL, 1, MOD_ALT | MOD_NOREPEAT, 0x43)){
             console_color_init();
-            HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
             printf("Copyright (c) 2021 subsystem64\n");
             printf("\n[*]Registering hotkey using MOD_NOREPEAT flag ...");
             print_ok();
